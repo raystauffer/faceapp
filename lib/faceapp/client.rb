@@ -24,6 +24,7 @@ module Faceapp
       options[:api_host]    ||= DEFAULT_API_HOST
       options[:user_agent]  ||= DEFAULT_USER_AGENT
       options[:device_id]   ||= generate_device_id
+      options[:api_version]   ||= 'v2.3'
 
       options[:headers] = {
         'User-Agent' => options[:user_agent],
@@ -35,7 +36,7 @@ module Faceapp
       photo_io = UploadIO.new(photo, 'image/jpeg', 'image.jpg')
 
       request =
-        Net::HTTP::Post::Multipart.new '/api/v2.11/photos',
+        Net::HTTP::Post::Multipart.new "/api/#{options[:api_version]}/photos",
                                        { 'file' => photo_io },
                                        options[:headers]
 
@@ -61,7 +62,7 @@ module Faceapp
     def apply_filter(photo_code, filter, io = nil, &block)
       cropped = options.fetch(:cropped, true) ? "true" : "false"
 
-      url = "/api/v2.11/photos/#{photo_code}/filters/#{filter}?cropped=#{cropped}"
+      url = "/api/#{options[:api_version]}/photos/#{photo_code}/filters/#{filter}?cropped=#{cropped}"
 
       request = Net::HTTP::Get.new(url, options[:headers])
 
