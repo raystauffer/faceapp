@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://node-01.faceapp.io/api/v2.3/photos
+    uri: https://node-01.faceapp.io/api/v2.11/photos
     body:
       encoding: UTF-8
       string: "-------------RubyMultipartPost-e346d25caba8510ec09cd9fb068f0a7d\r\nContent-Disposition:

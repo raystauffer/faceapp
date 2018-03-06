@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://node-01.faceapp.io/api/v2.3/photos/20170417145829yocc/filters/foobar?cropped=1
+    uri: https://node-01.faceapp.io/api/v2.11/photos/20170417145829yocc/filters/foobar?cropped=1
     body:
       encoding: US-ASCII
       string: ''
