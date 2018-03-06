@@ -24,7 +24,7 @@ module Faceapp
       options[:api_host]    ||= DEFAULT_API_HOST
       options[:user_agent]  ||= DEFAULT_USER_AGENT
       options[:device_id]   ||= generate_device_id
-      options[:api_version]   ||= 'v2.3'
+      options[:api_version]   ||= 'v2.11'
 
       options[:headers] = {
         'User-Agent' => options[:user_agent],
