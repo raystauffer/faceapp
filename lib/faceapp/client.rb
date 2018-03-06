@@ -35,7 +35,7 @@ module Faceapp
       photo_io = UploadIO.new(photo, 'image/jpeg', 'image.jpg')
 
       request =
-        Net::HTTP::Post::Multipart.new '/api/v2.11/photos',
+        Net::HTTP::Post::Multipart.new '/api/v2.6/photos',
                                        { 'file' => photo_io },
                                        options[:headers]
 
@@ -61,7 +61,7 @@ module Faceapp
     def apply_filter(photo_code, filter, io = nil, &block)
       cropped = options.fetch(:cropped, true) ? "true" : "false"
 
-      url = "/api/v2.11/photos/#{photo_code}/filters/#{filter}?cropped=#{cropped}"
+      url = "/api/v2.6/photos/#{photo_code}/filters/#{filter}?cropped=#{cropped}"
 
       request = Net::HTTP::Get.new(url, options[:headers])
 

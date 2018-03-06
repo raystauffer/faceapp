@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://node-01.faceapp.io/api/v2.11/photos
+    uri: https://node-01.faceapp.io/api/v2.6/photos
     body:
       encoding: ASCII-8BIT
       string: !binary |-
